@@ -59,7 +59,7 @@ const Hero = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/resume.pdf"
+              href="/VivekResume.pdf"
               download
               className="border-2 border-purple-600 text-purple-600 dark:text-purple-400 px-8 py-3 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition-colors"
             >
@@ -71,7 +71,7 @@ const Hero = () => {
           <div className="flex justify-center gap-6 mt-8">
             <motion.a
               whileHover={{ scale: 1.2 }}
-              href="https://github.com"
+              href="https://github.com/Vivekjoshi11"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400"
@@ -80,7 +80,7 @@ const Hero = () => {
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.2 }}
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/vivek-joshi-360317203"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400"
@@ -89,7 +89,7 @@ const Hero = () => {
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.2 }}
-              href="mailto:vivek@example.com"
+              href="mailto:joshivivekh1@gmail.com"
               className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400"
             >
               <Mail size={24} />

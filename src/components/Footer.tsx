@@ -46,7 +46,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Connect</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Vivekjoshi11"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -54,7 +54,7 @@ const Footer = () => {
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/vivek-joshi-360317203"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -62,7 +62,7 @@ const Footer = () => {
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:vivek@example.com"
+                href="joshivivekh1@gmail.com"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Mail size={24} />

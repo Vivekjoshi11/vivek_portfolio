@@ -6,39 +6,67 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      location: 'San Francisco, CA',
-      period: '2022 - Present',
-      description: 'Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.',
+      title: 'Full-stack & Blockchain Developer',
+      company: 'The-Ally',
+      location: 'Bangalore, India (Remote)',
+      period: 'May 2025 – Present',
+      description: 'Working on a full-stack Ethereum-based dApp using Hardhat, ERC-20 smart contracts, Next.js, and Node.js. Responsible for designing and writing smart contracts, integrating them into a scalable web application, and building robust backend systems using Node.js with PostgreSQL and MySQL. Implemented MetaMask wallet integration and authentication on the Next.js frontend to enable secure user onboarding and interactions.',
       achievements: [
         'Reduced application load time by 40% through optimization',
-        'Led team of 5 developers on major product launch',
-        'Implemented CI/CD pipeline reducing deployment time by 60%'
+        'Ensured secure contract interactions and efficient transaction flows',
+        'Implemented seamless user experiences across the dApp'
       ]
     },
     {
-      title: 'Full Stack Developer',
-      company: 'Digital Innovations',
-      location: 'New York, NY',
-      period: '2020 - 2022',
-      description: 'Developed and maintained multiple client projects using modern web technologies. Collaborated with cross-functional teams to deliver high-quality solutions.',
+      title: 'Full-stack & Blockchain Developer',
+      company: 'Skytrade USA',
+      location: 'USA (Remote)',
+      period: 'September 2024 – May 2025',
+      description: 'Worked as a full-stack developer on Solana dApps using Rust, Anchor, and Next.js, integrating secure smart contracts into web and mobile applications. Developed multi-wallet functionality supporting Phantom and Solflare using Solana Wallet Adapter in both Next.js and Flutter interfaces.',
+      achievements: [
+        'Led development of cross-platform drone signal verifier on Peaq Network',
+        'Automated backend smart contract interactions using Node.js',
+        'Enabled NFT minting with Metaplex metadata standards',
+        'Implemented advanced Solana features like lamports, rent exemptions, and priority fees'
+      ]
+    },
+    {
+      title: 'Software Engineer (Freelancer)',
+      company: 'DL SSR Infotech',
+      location: 'Delhi, India (Remote)',
+      period: 'April 2024 – September 2024',
+      description: 'Collaborated effectively with diverse teams to achieve project objectives. Engineered and maintained highly interactive mobile applications using Flutter framework, including projects like a short video app similar to Likee. Developed dynamic and responsive front-end for web applications using Next.js and React.js.',
       achievements: [
         'Built 10+ responsive web applications',
-        'Increased client satisfaction by 35%',
-        'Integrated payment systems processing $1M+ annually'
+        'Created short video app similar to Likee using Flutter',
+        'Applied advanced debugging techniques to enhance performance',
+        'Leveraged Figma for designing intuitive user interfaces'
       ]
     },
     {
-      title: 'Frontend Developer',
-      company: 'Startup Hub',
-      location: 'Austin, TX',
-      period: '2019 - 2020',
-      description: 'Focused on creating engaging user interfaces and improving user experience. Worked closely with designers to implement pixel-perfect designs.',
+      title: 'ML - AI Intern',
+      company: 'Edunet Foundation',
+      location: 'Ahmedabad, India',
+      period: 'January 2024 – March 2024',
+      description: 'Acquired expertise in machine learning algorithms and successfully applied them to practical, real-world projects. Developed and trained deep learning models on labeled datasets, achieving high accuracy in image recognition tasks.',
       achievements: [
-        'Improved mobile responsiveness across all projects',
-        'Reduced bounce rate by 25% through UX improvements',
-        'Implemented modern UI frameworks and design systems'
+        'Increased image recognition accuracy by 15% in deepfake detection project',
+        'Conducted in-depth analysis of complex datasets',
+        'Constructed predictive models for recommendation systems',
+        'Extracted critical features from datasets for model improvement'
+      ]
+    },
+    {
+      title: 'Front-end Developer (Angular)',
+      company: 'Ximple Solutions',
+      location: 'Ahmedabad, India',
+      period: 'June 2022 - January 2023',
+      description: 'Collaborated effectively with diverse teams to achieve shared objectives. Engineered and maintained highly interactive and user-centric webpages using the Angular framework, with expertise in HTML, CSS, and TypeScript, resulting in seamless user experiences.',
+      achievements: [
+        'Maintained highly interactive ERP web application',
+        'Applied advanced debugging techniques to resolve critical bugs',
+        'Enhanced performance and ensured optimal functionality',
+        'Created seamless user experiences across all products'
       ]
     }
   ];
