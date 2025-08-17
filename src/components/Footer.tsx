@@ -18,7 +18,7 @@ const Footer = () => {
           >
             <h3 className="text-xl font-bold mb-4">Vivek</h3>
             <p className="text-gray-400">
-              Full-stack developer passionate about creating beautiful, functional web experiences.
+              Full-stack and blockchain developer passionate about creating beautiful, functional Applications.
             </p>
           </motion.div>
 
