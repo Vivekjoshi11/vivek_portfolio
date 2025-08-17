@@ -52,7 +52,7 @@ const ConnectModal = ({ isOpen, onClose }: ConnectModalProps) => {
       name: 'Instagram',
       value: '@vivek_joshi11',
       icon: Instagram,
-      url: 'https://instagram.com/vivek_joshi11',
+      url: 'https://www.instagram.com/vivek_joshi_110000/profilecard/?igsh=bmVzeXlxMXRiMG1z',
       color: 'text-pink-500'
     }
   ];
