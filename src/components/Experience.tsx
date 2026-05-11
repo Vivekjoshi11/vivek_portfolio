@@ -10,24 +10,23 @@ const Experience = () => {
       company: 'The-Ally',
       location: 'Bangalore, India (Remote)',
       period: 'May 2025 – Present',
-      description: 'Working on a full-stack Ethereum-based dApp using Hardhat, ERC-20 smart contracts, Next.js, and Node.js. Responsible for designing and writing smart contracts, integrating them into a scalable web application, and building robust backend systems using Node.js with PostgreSQL and MySQL. Implemented MetaMask wallet integration and authentication on the Next.js frontend to enable secure user onboarding and interactions.',
+      description: 'Developing a full-stack Ethereum-based dApp using Solidity, Hardhat, Next.js, Django and Node.js. Designing and deploying ERC-20 smart contracts with secure blockchain transaction workflows. Working on a CBDC token platform with smart contract-based token management and secure financial workflows.',
       achievements: [
-        'Reduced application load time by 40% through optimization',
-        'Ensured secure contract interactions and efficient transaction flows',
-        'Implemented seamless user experiences across the dApp'
+        'Optimizing smart contract interactions for scalability, gas efficiency, and security best practices',
+        'Developing production-grade full-stack applications using Next.js, Django and MySQL',
+        'Designing and integrating REST APIs for frontend-backend communication and third-party service integrations',
+        'Managing backend infrastructure, database operations, and application performance optimization',
+        'Building scalable backend APIs and managing database architecture using Django and MySQL'
       ]
     },
     {
       title: 'Full-stack & Blockchain Developer',
-      company: 'Skytrade USA',
+      company: 'Skytrade',
       location: 'USA (Remote)',
       period: 'September 2024 – May 2025',
-      description: 'Worked as a full-stack developer on Solana dApps using Rust, Anchor, and Next.js, integrating secure smart contracts into web and mobile applications. Developed multi-wallet functionality supporting Phantom and Solflare using Solana Wallet Adapter in both Next.js and Flutter interfaces.',
+      description: 'Built Solana dApps using Rust, Anchor and Next.js with secure smart contract integrations. Implemented multi-wallet support including Phantom, Solflare and Backpack wallets. Developed a drone signal verifier on Peaq Network using Flutter, Node.js and Next.js.',
       achievements: [
-        'Led development of cross-platform drone signal verifier on Peaq Network',
-        'Automated backend smart contract interactions using Node.js',
-        'Enabled NFT minting with Metaplex metadata standards',
-        'Implemented advanced Solana features like lamports, rent exemptions, and priority fees'
+        'Worked with NFT minting, compute units, rent exemptions, and priority fees'
       ]
     },
     {
@@ -35,7 +34,7 @@ const Experience = () => {
       company: 'DL SSR Infotech',
       location: 'Delhi, India (Remote)',
       period: 'April 2024 – September 2024',
-      description: 'Collaborated effectively with diverse teams to achieve project objectives. Engineered and maintained highly interactive mobile applications using Flutter framework, including projects like a short video app similar to Likee. Developed dynamic and responsive front-end for web applications using Next.js and React.js.',
+      description: 'Developed responsive web and mobile applications using Flutter, Next.js and React.js. Optimized performance, resolved bugs, and collaborated with UI/UX teams using Figma.',
       achievements: [
         'Built 10+ responsive web applications',
         'Created short video app similar to Likee using Flutter',
@@ -48,7 +47,7 @@ const Experience = () => {
       company: 'Edunet Foundation',
       location: 'Ahmedabad, India',
       period: 'January 2024 – March 2024',
-      description: 'Acquired expertise in machine learning algorithms and successfully applied them to practical, real-world projects. Developed and trained deep learning models on labeled datasets, achieving high accuracy in image recognition tasks.',
+      description: 'Developed and trained deep learning models for image recognition tasks. Built deepfake image detection models using Python and TensorFlow. Improved model accuracy through dataset analysis and feature engineering.',
       achievements: [
         'Increased image recognition accuracy by 15% in deepfake detection project',
         'Conducted in-depth analysis of complex datasets',
@@ -59,9 +58,9 @@ const Experience = () => {
     {
       title: 'Front-end Developer (Angular)',
       company: 'Ximple Solutions',
-      location: 'Ahmedabad, India',
+      location: 'Ahmedabad, India (Remote)',
       period: 'June 2022 - January 2023',
-      description: 'Collaborated effectively with diverse teams to achieve shared objectives. Engineered and maintained highly interactive and user-centric webpages using the Angular framework, with expertise in HTML, CSS, and TypeScript, resulting in seamless user experiences.',
+      description: 'Developed ERP web interfaces using Angular, TypeScript, HTML and CSS with focus on performance optimization.',
       achievements: [
         'Maintained highly interactive ERP web application',
         'Applied advanced debugging techniques to resolve critical bugs',

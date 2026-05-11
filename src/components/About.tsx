@@ -1,14 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Database, Palette, Smartphone } from 'lucide-react';
+import { Code, Database, Palette, Smartphone, Wrench } from 'lucide-react';
 
 const About = () => {
   const skills = [
-    { name: 'Frontend', icon: Code, items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
-    { name: 'Backend', icon: Database, items: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB'] },
-    { name: 'Design', icon: Palette, items: ['Figma', 'Adobe XD', 'UI/UX', 'Responsive Design'] },
-    { name: 'Mobile', icon: Smartphone, items: ['React Native', 'Flutter', 'iOS', 'Android'] },
+    { name: 'Blockchain & Smart Contracts', icon: Code, items: ['Solidity', 'Rust', 'Hardhat', 'Anchor', 'ERC-20', 'ERC-721', 'Ethereum', 'Solana'] },
+    { name: 'Frontend', icon: Palette, items: ['React.js', 'Next.js', 'Angular', 'Flutter', 'TypeScript', 'JavaScript', 'Tailwind CSS'] },
+    { name: 'Backend', icon: Database, items: ['Node.js', 'Django', 'Express.js', 'PostgreSQL', 'MongoDB', 'MySQL'] },
+    { name: 'Tools & Platforms', icon: Wrench, items: ['Git', 'GitHub', 'Jira', 'Postman', 'Figma', 'VS Code'] },
   ];
 
   return (
@@ -40,12 +40,10 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Who I Am</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-             I&apos;m a software engineer with hands-on experience creating web and blockchain applications that solve real-world problems. My skillset includes React, Next.js, Python, Angular, Flutter,  as well as blockchain technologies like Solana, Solidity, Hardhat, and Anchor. and I have a strong foundation in both frontend and backend development, allowing me to build end-to-end solutions that are not only functional but also user-friendly. also i am proficient in using tools like Figma for UI/UX design, ensuring that my applications are visually appealing and intuitive to use.
-
-
+             Full-Stack Blockchain Engineer with 3+ years of experience building scalable Web3 and full-stack applications using Solidity, Ethereum, Next.js, React.js, Django, Node.js, and Rust. Experienced in smart contracts, wallet integrations, backend APIs, ERC-20 token development, and decentralized application architecture across Ethereum and Solana ecosystems.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-             Outside of coding, I love exploring new frameworks, contributing to open-source projects, and sharing knowledge with the developer community. I&lsquo;m always eager to learn and grow, building impactful solutions at the intersection of web and decentralized technologies.
+             Outside of coding, I love exploring new frameworks, contributing to open-source projects, and sharing knowledge with the developer community. I'm always eager to learn and grow, building impactful solutions at the intersection of web and decentralized technologies.
             </p>
           </motion.div>
 
