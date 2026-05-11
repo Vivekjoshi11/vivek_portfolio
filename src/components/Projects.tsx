@@ -8,6 +8,15 @@ import { useState } from 'react';
 const Projects = () => {
   const projects = [
     {
+      title: 'Sports Tournament Management SaaS',
+      description: 'A SaaS-based tournament tracker and management application where tournament admins can create tournaments, assign officials, and manage various aspects like weight and age categories, brackets, points tables, and results. Admins can download tournament results for reporting and analysis.',
+      image: '/images/sports.png',
+      technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Vercel', 'SaaS', 'Tournament Management'],
+      github: 'https://github.com/Vivekjoshi11/Sports_software/tree/master/sportstacker',
+      live: 'https://sports-software-vjzh-1d2tcoqxd-viveks-projects-af3b1344.vercel.app/',
+      date: '2025'
+    },
+    {
       title: 'TokenVault',
       description: 'This is a dApp built with Next.js and Ethers.js, connected to a custom ERC-20 token smart contract. It simulates a banking system where users and bank entities can interact — users can view and manage multiple bank accounts in one place, and all actions are powered by blockchain transactions using the custom token.',
       image: '/images/TokenVault.png',
