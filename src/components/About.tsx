@@ -44,7 +44,7 @@ const About = () => {
              Full-Stack Blockchain Engineer with 3+ years of experience building scalable Web3 and full-stack applications using Solidity, Ethereum, Next.js, React.js, Django, Node.js, and Rust. Experienced in smart contracts, wallet integrations, backend APIs, ERC-20 token development, and decentralized application architecture across Ethereum and Solana ecosystems.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-             Outside of coding, I love exploring new frameworks, contributing to open-source projects, and sharing knowledge with the developer community. I'm always eager to learn and grow, building impactful solutions at the intersection of web and decentralized technologies.
+             Outside of coding, I love exploring new frameworks, contributing to open-source projects, and sharing knowledge with the developer community. I&rsquo;m always eager to learn and grow, building impactful solutions at the intersection of web and decentralized technologies.
             </p>
           </motion.div>
 
