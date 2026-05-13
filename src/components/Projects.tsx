@@ -13,7 +13,7 @@ const Projects = () => {
       image: '/images/sports.png',
       technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Vercel', 'SaaS', 'Tournament Management'],
       github: 'https://github.com/Vivekjoshi11/Sports_software/tree/master/sportstacker',
-      live: 'https://sports-software-vjzh-1d2tcoqxd-viveks-projects-af3b1344.vercel.app/',
+      live: 'https://sports-software-vjzh.vercel.app/',
       date: '2025'
     },
     {
