@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Database, Palette, Smartphone, Wrench } from 'lucide-react';
+import { Code, Database, Palette, Wrench } from 'lucide-react';
 
 const About = () => {
   const skills = [
@@ -13,8 +12,11 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 bg-black relative overflow-hidden">
+      <div className="absolute inset-0 tech-grid"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-transparent to-red-900/20"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,13 +24,15 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              About Me
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Passionate full-stack & blockchain developer with expertise in creating beautiful, functional web and App experiences
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              <span className="holo-text">ABOUT ME</span>
+            </h2>
+            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+          </div>
+          <p className="text-xl text-cyan-400 max-w-3xl mx-auto">
+            Full-stack & blockchain developer creating <span className="text-white font-semibold">immersive digital experiences</span>
           </p>
         </motion.div>
 
@@ -39,12 +43,12 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Who I Am</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-             Full-Stack Blockchain Engineer with 3+ years of experience building scalable Web3 and full-stack applications using Solidity, Ethereum, Next.js, React.js, Django, Node.js, and Rust. Experienced in smart contracts, wallet integrations, backend APIs, ERC-20 token development, and decentralized application architecture across Ethereum and Solana ecosystems.
+            <h3 className="text-2xl font-bold mb-4 text-white">WHO I AM</h3>
+            <p className="text-cyan-300 mb-4">
+              Full-Stack Blockchain Engineer with 3+ years of experience building scalable Web3 and full-stack applications using Solidity, Ethereum, Next.js, React.js, Django, Node.js, and Rust. Experienced in smart contracts, wallet integrations, backend APIs, ERC-20 token development, and decentralized application architecture across Ethereum and Solana ecosystems.
             </p>
-            <p className="text-gray-600 dark:text-gray-300">
-             Outside of coding, I love exploring new frameworks, contributing to open-source projects, and sharing knowledge with the developer community. I&rsquo;m always eager to learn and grow, building impactful solutions at the intersection of web and decentralized technologies.
+            <p className="text-cyan-300">
+              Outside of coding, I love exploring new frameworks, contributing to open-source projects, and sharing knowledge with the developer community. I&rsquo;m always eager to learn and grow, building impactful solutions at the intersection of web and decentralized technologies.
             </p>
           </motion.div>
 
@@ -62,15 +66,22 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+                className="relative bg-black/50 border border-cyan-500/30 p-6 rounded-lg holo-border group"
               >
-                <div className="flex items-center mb-3">
-                  <skill.icon className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-3" />
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-white">{skill.name}</h4>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute top-0 left-0 w-1 h-1 bg-cyan-400"></div>
+                <div className="absolute bottom-0 right-0 w-1 h-1 bg-cyan-400"></div>
+                
+                <div className="flex items-center mb-3 relative z-10">
+                  <skill.icon className="w-6 h-6 text-cyan-400 mr-3" />
+                  <h4 className="text-lg font-semibold text-white">{skill.name}</h4>
                 </div>
-                <ul className="text-sm text-gray-600 dark:text-gray-300">
+                <ul className="text-sm text-cyan-300 relative z-10">
                   {skill.items.map((item) => (
-                    <li key={item} className="mb-1">{item}</li>
+                    <li key={item} className="mb-1 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span>
+                      {item}
+                    </li>
                   ))}
                 </ul>
               </motion.div>
