@@ -3,38 +3,50 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { Github, Linkedin, Mail, Download, User } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ContactModal from './ContactModal';
 import ConnectModal from './ConnectModal';
 
 const Hero = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
+  const [particles, setParticles] = useState<{ left: number; top: number; duration: number; delay: number }[]>([]);
+
+  useEffect(() => {
+    setParticles(
+      Array.from({ length: 20 }, () => ({
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        duration: 3 + Math.random() * 2,
+        delay: Math.random() * 2,
+      }))
+    );
+  }, []);
 
   return (
     <>
-      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
+      <section id="hero" className="min-h-screen flex items-center justify-center pt-18 pb-18 relative overflow-hidden bg-black">
         <div className="absolute inset-0 tech-grid"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-black to-red-900/30"></div>
-        
+
         {/* Animated background particles */}
         <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
+          {particles.map((p, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-cyan-400 rounded-full"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                left: `${p.left}%`,
+                top: `${p.top}%`,
               }}
               animate={{
                 y: [0, -100, 0],
                 opacity: [0, 1, 0],
               }}
               transition={{
-                duration: 3 + Math.random() * 2,
+                duration: p.duration,
                 repeat: Infinity,
-                delay: Math.random() * 2,
+                delay: p.delay,
               }}
             />
           ))}
