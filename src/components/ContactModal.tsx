@@ -2,7 +2,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, User, Mail, MessageSquare, ExternalLink } from 'lucide-react';
+import { X, Send, User, Mail, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
 
 interface ContactModalProps {
@@ -30,21 +30,8 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     setIsSubmitting(true);
     
     try {
-      // Email Integration Options:
-      // 1. EmailJS (Recommended for client-side only)
-      // 2. Netlify Forms (If hosting on Netlify)
-      // 3. Next.js API route with Nodemailer
-      // 4. Formspree or FormSubmit (Third-party services)
-      
-      // Example using EmailJS:
-      // await emailjs.send('service_id', 'template_id', formData, 'public_key');
-      
-      // For now, we'll simulate sending to your email
       console.log('Message to be sent to: joshivivekh1@gmail.com', formData);
-      
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
       setSubmitStatus('success');
       setTimeout(() => {
         onClose();
@@ -65,22 +52,28 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
           onClick={onClose}
         >
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto"
+            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+            className="bg-black/90 backdrop-blur-xl border border-cyan-500/30 rounded-lg shadow-[0_0_30px_rgba(0,229,255,0.3)] max-w-md w-full max-h-[90vh] overflow-y-auto relative"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/10 to-blue-900/10"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+            
+            <div className="p-6 relative z-10">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Get In Touch</h2>
+                <h2 className="text-2xl font-bold">
+                  <span className="text-cyan-400">MESSAGE_</span>
+                  <span className="text-white">SYSTEM</span>
+                </h2>
                 <button
                   onClick={onClose}
-                  className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                  className="text-cyan-400 hover:text-white transition-colors"
                 >
                   <X size={24} />
                 </button>
@@ -88,24 +81,24 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
               {submitStatus === 'success' ? (
                 <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Send size={24} className="text-green-600 dark:text-green-400" />
+                  <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/30">
+                    <Send size={24} className="text-green-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">Message Sent!</h3>
-                  <p className="text-gray-600 dark:text-gray-300">Thank you for reaching out. I&apos;ll get back to you soon!</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">TRANSMISSION COMPLETE</h3>
+                  <p className="text-cyan-300">Message sent successfully. Awaiting response...</p>
                 </div>
               ) : (
                 <>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                    Messages will be sent to: <strong>joshivivekh1@gmail.com</strong>
+                  <p className="text-sm text-cyan-400 mb-4">
+                    Transmitting to: <strong className="text-white">joshivivekh1@gmail.com</strong>
                   </p>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        Name
+                      <label htmlFor="name" className="block text-sm font-medium text-cyan-300 mb-1">
+                        USERNAME
                       </label>
                       <div className="relative">
-                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-cyan-400" size={20} />
                         <input
                           type="text"
                           id="name"
@@ -113,18 +106,18 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white"
-                          placeholder="Your name"
+                          className="w-full pl-10 pr-3 py-2 bg-black/50 border border-cyan-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 text-white placeholder-cyan-400/50"
+                          placeholder="Enter identifier"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        Email
+                      <label htmlFor="email" className="block text-sm font-medium text-cyan-300 mb-1">
+                        EMAIL
                       </label>
                       <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-cyan-400" size={20} />
                         <input
                           type="email"
                           id="email"
@@ -132,15 +125,15 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white"
-                          placeholder="your.email@example.com"
+                          className="w-full pl-10 pr-3 py-2 bg-black/50 border border-cyan-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 text-white placeholder-cyan-400/50"
+                          placeholder="user@domain.com"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="topic" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        Topic
+                      <label htmlFor="topic" className="block text-sm font-medium text-cyan-300 mb-1">
+                        PROTOCOL
                       </label>
                       <select
                         id="topic"
@@ -148,23 +141,23 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                         value={formData.topic}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white"
+                        className="w-full px-3 py-2 bg-black/50 border border-cyan-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 text-white"
                       >
-                        <option value="">Select a topic</option>
-                        <option value="project-inquiry">Project Inquiry</option>
-                        <option value="collaboration">Collaboration</option>
-                        <option value="job-opportunity">Job Opportunity</option>
-                        <option value="freelance-work">Freelance Work</option>
-                        <option value="general">General Inquiry</option>
+                        <option value="">Select protocol</option>
+                        <option value="project-inquiry">PROJECT_INQUIRY</option>
+                        <option value="collaboration">COLLABORATION</option>
+                        <option value="job-opportunity">JOB_OPPORTUNITY</option>
+                        <option value="freelance-work">FREELANCE_WORK</option>
+                        <option value="general">GENERAL_QUERY</option>
                       </select>
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        Message
+                      <label htmlFor="message" className="block text-sm font-medium text-cyan-300 mb-1">
+                        PAYLOAD
                       </label>
                       <div className="relative">
-                        <MessageSquare className="absolute left-3 top-3 text-gray-400" size={20} />
+                        <MessageSquare className="absolute left-3 top-3 text-cyan-400" size={20} />
                         <textarea
                           id="message"
                           name="message"
@@ -172,34 +165,24 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                           onChange={handleInputChange}
                           required
                           rows={4}
-                          className="w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white"
-                          placeholder="Tell me about your project or inquiry..."
+                          className="w-full pl-10 pr-3 py-2 bg-black/50 border border-cyan-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 text-white placeholder-cyan-400/50"
+                          placeholder="Enter transmission data..."
                         />
                       </div>
                     </div>
 
-                    <div className="text-xs text-gray-500 dark:text-gray-400">
-                      <p>To set up email delivery, integrate with:</p>
-                      <ul className="list-disc list-inside mt-1">
-                        <li>EmailJS (client-side)</li>
-                        <li>Next.js API route with Nodemailer</li>
-                        <li>Netlify Forms</li>
-                        <li>Formspree/FormSubmit</li>
-                      </ul>
-                    </div>
-
                     {submitStatus === 'error' && (
-                      <div className="text-red-600 dark:text-red-400 text-sm">
-                        Something went wrong. Please try again.
+                      <div className="text-red-400 text-sm bg-red-500/20 border border-red-500/30 p-2 rounded">
+                        TRANSMISSION FAILED. Retrying...
                       </div>
                     )}
 
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-4 rounded-md hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-black py-2 px-4 rounded-lg hover:from-cyan-400 hover:to-blue-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all font-semibold"
                     >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                      {isSubmitting ? 'TRANSMITTING...' : 'SEND TRANSMISSION'}
                     </button>
                   </form>
                 </>

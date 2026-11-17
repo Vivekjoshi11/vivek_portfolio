@@ -26,13 +26,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900">
+    <main className="min-h-screen">
       <Navbar />
       <Hero />
       <About />
       <Experience />
       <Projects />
-      
       <Footer />
     </main>
   );

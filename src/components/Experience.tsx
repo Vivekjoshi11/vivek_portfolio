@@ -71,47 +71,54 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-20 bg-black relative overflow-hidden">
+      <div className="absolute inset-0 tech-grid"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-transparent to-red-900/20"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Experience
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            My professional journey and career milestones
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              <span className="holo-text">EXPERIENCE</span>
+            </h2>
+            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+          </div>
+          <p className="text-xl text-cyan-400 max-w-3xl mx-auto">
+            Professional journey across <span className="text-white font-semibold">Web3, Full-Stack, and AI</span> domains
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto relative">
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-cyan-500/30"></div>
+          
           {experiences.map((experience, index) => (
             <motion.div
-              key={experience.title}
+              key={`${experience.title}-${experience.company}`}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative mb-8"
+              className={`relative mb-12 group`}
             >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-                  <Briefcase className="w-6 h-6 text-white" />
-                </div>
-                
-                <div className="flex-1 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+              <div className="absolute -left-1/2 top-4 w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,229,255,0.8)] z-10">
+                <Briefcase className="w-6 h-6 text-white" />
+              </div>
+              
+              <div className={`flex items-start gap-8 ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}>
+                <div className={`flex-1 bg-black/40 border border-cyan-500/30 p-6 rounded-lg shadow-xl holo-border hover:border-cyan-500/60 transition-all group-hover:shadow-[0_0_30px_rgba(0,229,255,0.4)] relative z-0`}>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-800 dark:text-white">{experience.title}</h3>
-                      <p className="text-purple-600 dark:text-purple-400 font-semibold">{experience.company}</p>
+                      <h3 className="text-xl font-bold text-white">{experience.title}</h3>
+                      <p className="text-cyan-400 font-semibold">{experience.company}</p>
                     </div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400 mt-2 sm:mt-0">
+                    <div className="text-sm text-cyan-400 mt-2 sm:mt-0">
                       <div className="flex items-center gap-4">
                         <span className="flex items-center">
                           <Calendar size={14} className="mr-1" />
@@ -125,20 +132,23 @@ const Experience = () => {
                     </div>
                   </div>
                   
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{experience.description}</p>
+                  <p className="text-cyan-300 mb-4">{experience.description}</p>
                   
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-gray-800 dark:text-white">Key Achievements:</h4>
+                    <h4 className="font-semibold text-white mb-2">KEY ACHIEVEMENTS:</h4>
                     <ul className="space-y-1">
                       {experience.achievements.map((achievement, idx) => (
-                        <li key={idx} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
-                          <span className="w-2 h-2 bg-purple-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <li key={idx} className="text-sm text-cyan-300 flex items-start">
+                          <span className="w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                           {achievement}
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
+                
+                <div className="absolute -right-1/2 top-4 w-1 h-full bg-cyan-500/30 hidden sm:block"></div>
+                <div className="absolute -left-1/2 top-4 w-1 h-full bg-cyan-500/30 hidden sm:block"></div>
               </div>
             </motion.div>
           ))}
