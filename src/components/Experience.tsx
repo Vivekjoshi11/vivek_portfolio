@@ -96,30 +96,32 @@ const Experience = () => {
         </motion.div>
 
         <div className="max-w-4xl mx-auto relative">
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-cyan-500/30"></div>
-          
-          {experiences.map((experience, index) => (
-            <motion.div
-              key={`${experience.title}-${experience.company}`}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`relative mb-12 group`}
-            >
-              <div className="absolute -left-1/2 top-4 w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,229,255,0.8)] z-10">
-                <Briefcase className="w-6 h-6 text-white" />
-              </div>
-              
-              <div className={`flex items-start gap-8 ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}>
-                <div className={`flex-1 bg-black/40 border border-cyan-500/30 p-6 rounded-lg shadow-xl holo-border hover:border-cyan-500/60 transition-all group-hover:shadow-[0_0_30px_rgba(0,229,255,0.4)] relative z-0`}>
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-cyan-500/30 md:-translate-x-1/2"></div>
+
+          {experiences.map((experience, index) => {
+            const isEven = index % 2 === 0;
+
+            return (
+              <motion.div
+                key={`${experience.title}-${experience.company}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="relative pl-16 md:pl-0 mb-8 md:mb-4"
+              >
+                <div className="absolute left-4 md:left-1/2 top-4 w-12 h-12 -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,229,255,0.8)] z-10">
+                  <Briefcase className="w-6 h-6 text-white" />
+                </div>
+
+                <div className={`w-full md:w-[calc(50%-2.5rem)] bg-black/40 border border-cyan-500/30 p-6 rounded-lg shadow-xl holo-border hover:border-cyan-500/60 transition-all hover:shadow-[0_0_30px_rgba(0,229,255,0.4)] ${isEven ? 'md:mr-auto' : 'md:ml-auto'}`}>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-white">{experience.title}</h3>
                       <p className="text-cyan-400 font-semibold">{experience.company}</p>
                     </div>
                     <div className="text-sm text-cyan-400 mt-2 sm:mt-0">
-                      <div className="flex items-center gap-4">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
                         <span className="flex items-center">
                           <Calendar size={14} className="mr-1" />
                           {experience.period}
@@ -131,27 +133,24 @@ const Experience = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <p className="text-cyan-300 mb-4">{experience.description}</p>
-                  
+
                   <div className="space-y-2">
                     <h4 className="font-semibold text-white mb-2">KEY ACHIEVEMENTS:</h4>
                     <ul className="space-y-1">
                       {experience.achievements.map((achievement, idx) => (
                         <li key={idx} className="text-sm text-cyan-300 flex items-start">
                           <span className="w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          {achievement}
+                          <span>{achievement}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
-                
-                <div className="absolute -right-1/2 top-4 w-1 h-full bg-cyan-500/30 hidden sm:block"></div>
-                <div className="absolute -left-1/2 top-4 w-1 h-full bg-cyan-500/30 hidden sm:block"></div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
