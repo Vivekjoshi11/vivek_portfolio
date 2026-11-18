@@ -137,7 +137,7 @@ const Projects = () => {
                 className="relative group perspective-3d"
               >
                 <div className="relative bg-black/50 border border-cyan-500/30 rounded-lg overflow-hidden shadow-2xl holo-border group">
-                  <div className="absolute inset-0 border-2 border-cyan-500/0 group-hover:border-cyan-500/30 transition-all duration-300 rounded-lg overflow-hidden hidden group-hover:block">
+                  <div className="pointer-events-none absolute inset-0 border-2 border-cyan-500/0 group-hover:border-cyan-500/30 transition-all duration-300 rounded-lg overflow-hidden hidden group-hover:block">
                     <div className="scan-effect"></div>
                   </div>
 
